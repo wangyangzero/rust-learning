@@ -21,8 +21,8 @@ fn main() {
 
     let mut str: String= String::from("hello");
     let str1 = &mut str;
-    // let str2 = &mut str;
-    println!("{} {}", str1, str1)
+    let str2 = &mut str;
+    println!("{} {}", str1, str2)
 } // Here, x goes out of scope, then s. But because s's value was moved, nothing
   // special happens.
 
@@ -45,4 +45,8 @@ fn cal_len(s: &String) -> usize {
 
 fn add(s: &mut String) {
   s.push_str(",world");
+}
+
+fn first_word(s: &str) -> &str {
+  &s[0..]
 }
